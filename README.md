@@ -33,21 +33,32 @@ The goal is to support hospitals in **reducing avoidable readmissions**, improvi
   - Click **Run All** to execute all code cells
 ********************************************************************************
 ## **Results Summary**
-
-**Predictive performance**
-    - Models AUC-ROC resulted to poor discrimination and low Recall, possibly due to dropped columns for minimizing runtime.
+**Predictive performance:**
+    - Lower thresholds dramatically improve recall across all models, especially Logistic Regression and Random Forest with >98% recall.
     
-**Key drivers of readmission**
-    - Prior utilization (outpatient, inpatient, emergency visits)
+    - Precision increases as thresholds rise, but at the cost of missing high-risk patients.
+    
+    - GradientBoosting with 0.2 threshold resulted to **90% of readmissions** with visible improvement on **precision of 0.125%** suggestiong a more selective risk ranking while still maintaining strong sensitivity. This may be appropriate when hospitals want **high recall with slightly better precision trade-offs.**
+    
+**Key drivers of readmission:**
+
+    - Prior utilization (inpatient, emergency visits)
+    
     - Insulin usage and diabetes medication patterns
+    
     - Comorbidity burden and discharge disposition
     
-**Interpretability**
+**Interpretability:**
+
     - SHAP analysis highlighted clinically meaningful risk and protective factors.
+    
     - Negative SHAP values identified features associated with reduced readmission risk.
     
-**Fairness**
-    - Fairness metrics (TPR, FPR, disparate impact) revealed disparities across race, gender, and age groups.
+**Fairness:**
+
+    - Results are inconclusive due to sparse positive outcomes in several subgroups. 
+    
+    - A comprehensive fairness assessment should rely on multiple metrics rather than disparate impact alone.
 ***********************************************************************************
 ## Author Information
 
