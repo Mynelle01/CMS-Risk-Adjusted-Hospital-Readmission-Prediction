@@ -1,0 +1,6 @@
+# Ignore datasets
+data/raw/*.csv
+data/processed/*.csv
+
+# Optional: ignore large model files
+*.pkl
