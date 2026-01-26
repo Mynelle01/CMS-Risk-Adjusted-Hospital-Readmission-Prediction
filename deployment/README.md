@@ -73,3 +73,14 @@
 A prototype GenAI-assisted explanation module was developed to translate model outputs and SHAP values into natural language summaries. This demonstrates how LLMs can enhanced interpretability and decision support when layered on top of predictive models. 
 
 All outputs are illustrative and reviewed by the author. No patient data is shared with external LLM services.
+
+## Reproducible Environment
+
+This project uses a Python virtual environment with pinned dependencies to ensure reproducible results across systems.
+
+To recreate the environment:
+pip install -r requirements.txt
+
+# Model Versioning and Monitoring
+
+Model artifacts are saved using joblib, allowing previous versions to be restored if performance degrades. In a production setting, model performance would be monitored using recall, false positive rate, and prediction drift. 
